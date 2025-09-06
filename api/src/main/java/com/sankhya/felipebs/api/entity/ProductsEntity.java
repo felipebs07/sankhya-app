@@ -1,22 +1,28 @@
 package com.sankhya.felipebs.api.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Objects;
 
-@NoArgsConstructor
+
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "products")
-public class Products {
+public class ProductsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "price")
     private Double price;
@@ -27,14 +33,15 @@ public class Products {
     @Column(name = "active")
     private boolean active;
 
+    @Version
     @Column(name = "version")
     private Integer version;
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Products products = (Products) o;
-        return Objects.equals(id, products.id);
+        ProductsEntity productsEntity = (ProductsEntity) o;
+        return Objects.equals(id, productsEntity.id);
     }
 
     @Override

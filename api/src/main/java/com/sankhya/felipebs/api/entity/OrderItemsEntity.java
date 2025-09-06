@@ -12,7 +12,7 @@ import java.util.Objects;
 @Setter
 @Entity
 @Table(name = "order_items")
-public class OrderItems {
+public class OrderItemsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -20,11 +20,11 @@ public class OrderItems {
 
     @JoinColumn(name = "order_id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Orders order;
+    private OrdersEntity order;
 
     @JoinColumn(name = "product_id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Products product;
+    private ProductsEntity product;
 
     @Column(name = "quantity")
     private Integer quantity;
@@ -38,7 +38,7 @@ public class OrderItems {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        OrderItems that = (OrderItems) o;
+        OrderItemsEntity that = (OrderItemsEntity) o;
         return Objects.equals(id, that.id) && Objects.equals(order, that.order) && Objects.equals(product, that.product);
     }
 

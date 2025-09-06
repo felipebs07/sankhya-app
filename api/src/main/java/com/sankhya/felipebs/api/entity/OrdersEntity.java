@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @NoArgsConstructor
@@ -12,7 +13,7 @@ import java.util.Objects;
 @Setter
 @Entity
 @Table(name = "orders")
-public class Orders {
+public class OrdersEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -22,13 +23,13 @@ public class Orders {
     private Double total;
 
     @Column(name = "created_at")
-    private boolean createdAt;
+    private LocalDateTime createdAt;
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Orders orders = (Orders) o;
-        return Objects.equals(id, orders.id);
+        OrdersEntity ordersEntity = (OrdersEntity) o;
+        return Objects.equals(id, ordersEntity.id);
     }
 
     @Override
