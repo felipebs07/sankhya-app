@@ -1,6 +1,6 @@
 # API Sankhya
 
-API desenvolvida com Spring Boot para gerenciamento de produtos e pedidos.
+API desenvolvida com Spring Boot para gerenciamento de produtos e pedidos
 
 ## Como Executar
 
