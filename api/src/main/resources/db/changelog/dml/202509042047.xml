@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="202509042047-1" author="felipebs">
+        <insert tableName="products">
+            <column name="name" value="Café Torrado 500g"/>
+            <column name="price" valueNumeric="18.90"/>
+            <column name="stock" valueNumeric="5"/>
+            <column name="active" valueBoolean="true"/>
+            <column name="version" valueNumeric="1"/>
+        </insert>
+
+        <insert tableName="products">
+            <column name="name" value="Filtro de Papel nº103"/>
+            <column name="price" valueNumeric="7.50"/>
+            <column name="stock" valueNumeric="10"/>
+            <column name="active" valueBoolean="true"/>
+            <column name="version" valueNumeric="1"/>
+        </insert>
+
+        <insert tableName="products">
+            <column name="name" value="Garrafa Térmica 1L"/>
+            <column name="price" valueNumeric="79.90"/>
+            <column name="stock" valueNumeric="2"/>
+            <column name="active" valueBoolean="true"/>
+            <column name="version" valueNumeric="1"/>
+        </insert>
+
+        <insert tableName="products">
+            <column name="name" value="Açúcar Mascavo 1kg"/>
+            <column name="price" valueNumeric="16.00"/>
+            <column name="stock" valueNumeric="0"/>
+            <column name="active" valueBoolean="true"/>
+            <column name="version" valueNumeric="1"/>
+        </insert>
+
+        <insert tableName="products">
+            <column name="name" value="Caneca Inox 300ml"/>
+            <column name="price" valueNumeric="29.00"/>
+            <column name="stock" valueNumeric="8"/>
+            <column name="active" valueBoolean="true"/>
+            <column name="version" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
