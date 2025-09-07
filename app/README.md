@@ -1,87 +1,84 @@
-# Welcome to React Router!
+# Sankhya App
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Aplicação web moderna desenvolvida com React Router para gerenciamento de produtos e pedidos.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Como Executar
 
-## Features
+### Pré-requisitos
+- Node.js v22.15.1
+- PNPM
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+### Passo a Passo
 
-## Getting Started
+1. Clone o projeto
+   - git clone [https://github.com/felipebs07/sankhya-app.git]
+   - cd sankhya-app
+   - altere o .env-exemplo para .env e configure corretamente.
 
-### Installation
+2. Instale as dependências
+   - pnpm install
 
-Install the dependencies:
+3. Execute em modo desenvolvimento
+   - pnpm run dev
 
-```bash
-npm install
-```
+4. Acesse a aplicação
+    - Abra o navegador em: http://localhost:5173
 
-### Development
+5. Pronto! A aplicação está funcionando.
 
-Start the development server with HMR:
 
-```bash
-npm run dev
-```
+# Configuração do Ambiente
+## Windows:
+- Baixe e instale o Node.js v22.15.1 do site oficial
+- Ou use o nvm: nvm install 22.15.1 && nvm use 22.15.1
 
-Your application will be available at `http://localhost:5173`.
+## Linux:
+### Ubuntu/Debian
+- curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+- sudo apt-get install -y nodejs
 
-## Building for Production
+## Mac
+- brew install node@22
 
-Create a production build:
+### Ou use nvm
+- nvm install 22.15.1
+- nvm use 22.15.1
 
-```bash
-npm run build
-```
+### Instalar PNPM
+- npm install -g pnpm
 
-## Deployment
+### Verificar Instalação
+1. node -v  (Deve mostrar: v22.15.1)
+2. pnpm -v  (Deve mostrar a versão do PNPM)
 
-### Docker Deployment
+### Configurações
+Você pode alterar as configurações no arquivo .env:
+- PORT_BACKEND: Porta onde a aplicação do backend vai rodar (padrao é 8080)
 
-To build and run using Docker:
+## Comandos Disponíveis
 
-```bash
-docker build -t my-app .
+- pnpm run dev        - Inicia servidor de desenvolvimento
+- pnpm run build      - Gera build de produção
+- pnpm run start      - Executa aplicação em produção
+- pnpm run typecheck  - Verifica tipos TypeScript
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
+## Tecnologias
 
-The containerized application can be deployed to any platform that supports Docker, including:
+- Node.js v22.15.1
+- React Router 7.7.1
+- React 19.1.0
+- TypeScript 5.8.3
+- TailwindCSS 4.1.4
+- Vite 6.3.3
+- PNPM (gerenciador de pacotes)
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+## Build para Produção
 
-### DIY Deployment
+1. Gere o build:
+   - pnpm build
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+2. Execute em produção:
+   - pnpm start
 
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+## Aviso para possíveis problemas
+- Se ocorrer algum erro com a porta do backend, altere a porta no arquivo .env
