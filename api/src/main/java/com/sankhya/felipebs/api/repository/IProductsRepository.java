@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public interface IProductsRepository extends JpaRepository<ProductsEntity, Long> {
 
-    @Query("FROM ProductsEntity WHERE name like :search")
+    @Query("FROM ProductsEntity WHERE LOWER(name) like :search")
     Page<ProductsEntity> searchByPagination(String search, Pageable of);
 
     @Query("FROM ProductsEntity WHERE id = :id")

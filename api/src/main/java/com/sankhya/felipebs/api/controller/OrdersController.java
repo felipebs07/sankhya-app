@@ -1,7 +1,9 @@
 package com.sankhya.felipebs.api.controller;
 
 import com.sankhya.felipebs.api.dto.OrderItemsDto;
+import com.sankhya.felipebs.api.entity.OrdersEntity;
 import com.sankhya.felipebs.api.service.OrdersService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +20,10 @@ public class OrdersController {
   }
 
   @PostMapping
-  public ResponseEntity<OrderItemsDto> createOrder(@RequestBody OrderItemsDto orderItemsDto) {
-      return ordersService.createOrder(orderItemsDto);
+  public ResponseEntity<OrdersEntity> createOrder(@RequestBody OrderItemsDto orderItemsDto) {
+      if(orderItemsDto.items().isEmpty()) {
+          return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+      }
+      return ResponseEntity.status(HttpStatus.CREATED).body(ordersService.createOrder(orderItemsDto));
   }
 }

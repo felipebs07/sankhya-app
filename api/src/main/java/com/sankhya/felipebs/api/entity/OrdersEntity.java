@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -20,10 +21,15 @@ public class OrdersEntity {
     private Long id;
 
     @Column(name = "total")
-    private Double total;
+    private BigDecimal total;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+    public OrdersEntity(BigDecimal total, LocalDateTime createdAt) {
+        this.total = total;
+        this.createdAt = createdAt;
+    }
 
     @Override
     public boolean equals(Object o) {

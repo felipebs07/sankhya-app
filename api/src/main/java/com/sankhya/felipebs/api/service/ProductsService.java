@@ -16,9 +16,8 @@ public class ProductsService {
 
     public Page<ProductsEntity> searchByPagination(String search, int size, int page) {
         if(search == null || search.isEmpty()) { search = "%%"; }
-        else { search = "%" + search + "%"; }
+        else { search = "%" + search.toLowerCase() + "%"; }
 
-        if(page >= 1) { page = page - 1; }
         return productsRepository.searchByPagination(search, PageRequest.of(page, size));
     }
 }

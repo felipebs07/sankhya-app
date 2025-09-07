@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @NoArgsConstructor
@@ -33,7 +34,14 @@ public class OrderItemsEntity {
     private Double unitPrice;
 
     @Column(name = "line_total")
-    private Double lineTotal;
+    private BigDecimal lineTotal;
+
+    public OrderItemsEntity(ProductsEntity product, Integer quantity, Double unitPrice, BigDecimal lineTotal) {
+        this.product = product;
+        this.quantity = quantity;
+        this.unitPrice = unitPrice;
+        this.lineTotal = lineTotal;
+    }
 
     @Override
     public boolean equals(Object o) {

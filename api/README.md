@@ -76,6 +76,18 @@ Você pode alterar as configurações no arquivo .env:
 Execute os testes:
 mvn test
 
+## Consulta
+### TOP 3 produtos mais vendidos
+SELECT
+   p.ID,
+   p.NAME,
+SUM(OI.QUANTITY) as TOTAL_VENDIDO
+FROM ORDER_ITEMS OI
+   INNER JOIN PRODUCTS p ON OI.PRODUCT_ID = p.ID
+GROUP BY p.ID, p.NAME
+ORDER BY TOTAL_VENDIDO DESC
+LIMIT 3;
+
 ## Problemas Comuns
 
 ### Erro "arquivo .env não encontrado":
