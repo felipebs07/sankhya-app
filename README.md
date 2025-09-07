@@ -9,8 +9,8 @@ Este repositório contém duas aplicações que trabalham juntas para entregar u
  - Frontend em React, responsável pela interface de listagem, carrinho e finalização de pedidos.
 
 ## Estrutura
-- /api   → Backend (Java 21, Spring Boot, H2, Liquibase)
-- /app   → Frontend (React, Vite, Tailwind, PNPM)
+- /api: Backend (Java 21, Spring Boot, H2, Liquibase)
+- /app: Frontend (React, Vite, Tailwind, PNPM)
 
 ## Como começar
 ### Cada projeto tem o seu próprio guia de execução:
